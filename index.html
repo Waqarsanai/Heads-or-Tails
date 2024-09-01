@@ -1,62 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heads or Tails</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f6f6f6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            margin-top: 100px;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #f05d5e;
-            margin-bottom: 20px;
-        }
-
-        button {
-            margin: 10px;
-            padding: 15px 30px;
-            font-size: 24px;
-            cursor: pointer;
-            background: linear-gradient(to bottom right, #f05d5e, #f2a265);
-            color: #fff;
-            border: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        #result {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f05d5e;
-            margin-top: 30px;
-            animation: fadeIn 1s ease;
-            display: none;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -67,32 +15,6 @@
         <p id="result"></p>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const headsBtn = document.getElementById('headsBtn');
-            const tailsBtn = document.getElementById('tailsBtn');
-            const result = document.getElementById('result');
-
-            headsBtn.addEventListener('click', function () {
-                playGame('heads');
-            });
-
-            tailsBtn.addEventListener('click', function () {
-                playGame('tails');
-            });
-
-            function playGame(userChoice) {
-                const coinFlip = Math.random() < 0.5 ? 'heads' : 'tails';
-
-                if (userChoice === coinFlip) {
-                    result.textContent = `Congratulations! It's ${coinFlip}. You win!`;
-                } else {
-                    result.textContent = `Sorry, it's ${coinFlip}. You lose. Better luck next time!`;
-                }
-
-                result.style.display = 'block';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
